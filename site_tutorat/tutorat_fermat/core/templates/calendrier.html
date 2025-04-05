@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <title>Tutorat Fermat</title>
+
+
+    <link rel="stylesheet" href="{% static 'css/calendrier.css' %}">
+
+    <script src="{% static 'js/calendrier.js' %}"></script>
+
+    <link rel="icon" href="{% static 'icons/icone-fermat.ico' %}">
+</head>
+<body>
+<div class="top-bar">
+    <h1>Tutorat Fermat</h1>
+    <div class="top-bar-right">
+        <a href="{% url 'seances' %}" class="nav-button">Liste des séances</a>
+        <a href="{% url 'home' %}" class="nav-button">Accueil</a>
+        <a href="{% url 'profil' %}" class="nav-button">Profil</a>
+    </div>
+
+
+</div>
+
+
+<div class="main-box">
+
+    <div class="section">
+        <div class="text-section">
+            <p> Choisissez votre rôle, la matière et inscrivez trois dates où vous êtes disponibles !</p>
+        </div>
+    </div>
+
+    <form action="{% url 'reserver' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group-label">{% for field in form %}
+
+            <span class="{% if field.name == 'date1' or field.name == 'date2' or field.name == 'date3' %}date-field{% endif %}">{{ field.label_tag }}</span>
+            <span>{{ field }}</span>
+            <div class="form-errors-{{ field.name }}">
+                {{ field.errors }}
+            </div>
+            {% endfor %}
+        </div>
+        <button type="submit">Réserver</button>
+    </form>
+
+    
+</div>
+
+<div class="footer">
+    <p>© 2024 Tutorat Fermat</p>
+    <a href="mailto:tutorat.lycee.fermat@gmail.com">tutorat.lycee.fermat@gmail.com</a>
+</div>
+</body>
+
+
+</html>

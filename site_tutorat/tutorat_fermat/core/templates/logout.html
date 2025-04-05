@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+    <title>Déconnexion - Tutorat Fermat</title>
+</head>
+<body>
+    <h1>Déconnexion</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Voulez-vous vraiment vous déconnecter ?</p>
+        <button type="submit">Oui</button>
+        <a href="{% url 'calendrier' %}">Non</a>
+    </form>
+</body>
+</html>

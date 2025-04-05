@@ -1,3 +1,4 @@
-# Tutorat-fermat
----
-Un site de tutorat pour le lycée Pierre de Fermat.
+# Tutorat-Fermat
+
+https://github.com/jln83/tutorat-fermat
+(version publique)

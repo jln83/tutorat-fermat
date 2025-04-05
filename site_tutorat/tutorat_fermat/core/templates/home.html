@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Tutorat Fermat</title>
+    
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <link rel="icon" href="{% static 'icons/icone-fermat.ico' %}">
+
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Tutorat Fermat</h1>
+        <div class="top-bar-right">
+            {% if not user.is_authenticated %}
+                <a href="{% url 'login' %}" class="nav-button">Connexion</a>
+            {% else %}
+                <a href="{% url 'seances' %}" class="nav-button">Réserver une séance</a>
+                <a href="{% url 'profil' %}" class="nav-button">Profil</a> 
+            {% endif %}
+        </div>
+
+
+     </div>
+
+
+    <div class="section1">
+
+        <p class="t1_s0">Bienvenue sur le site du tutorat Fermat</p>
+        <hr class="rounded">
+        <p class="t1_s1"> Que vous ayez besoin d’aide dans une matière, ou que vous souhaitiez partager vos compétences, rejoignez notre réseau de tutorat !</p>
+        <video autoplay loop muted class="video-bg">
+            <source src="../static/css/videos/etudier.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="section2">
+        <h3>Comment ça marche ?</h3>
+
+        <p class="t2_s0">Rejoignez notre réseau de tutorat en quelques étapes simples pour recevoir ou offrir de l’aide dans toutes les matières.</p>
+        <p class="t2_s0">Que vous soyez élève ou tuteur, la participation est simple et rapide.</p>
+        <p class="t2_s0">Sélectionnez les matières dans lesquelles vous avez besoin d'aide ou souhaitez aider,</p>
+        <p class="t2_s0">indiquez vos disponibilités selon vos horaires préférés et nous nous chargeons du reste !</p>
+
+    </div>
+
+    <div class="section3">
+        <h3>Réserver une séance</h3>
+
+        <p class="t3_s0">Vous souhaitez apprendre ou enseigner ?</p>
+        <p class="t3_s0">Que vous maîtrisiez une matière et souhaitiez partager vos connaissances, ou que vous ayez besoin d'aide pour progresser, inscrivez vous à une séance dès maintenant !</p>
+
+        <h3>Annuler une séance</h3>
+        <p class="t3_s0">Ne réservez et ne créez pas de séance si vous n'êtes pas sûrs à 100% d'être disponible sur le créneau</p>
+        <p class="t3_s0">Si vous posez un lapin à la personne, des sanctions pourraient être prises.</p>
+        <p class="t3_s0">Afin d'annuler une séance, il vous faudra envoyer un mail à l'adresse tutorat.lycee.fermat@gmail.com</p>
+        <p class="t3_s0">Dans ce mail, vous préciserez la date de la séance, la matière et votre nom d'utilisateur.</p>
+
+        <p class="t4_s0">Il est recommandé d'accéder au site en utilisant loRdi pour empêcher les problèmes d'affichage qui pourraient éventuellement arriver !</p>
+
+        {% if not user.is_authenticated %}
+            <div class="btn">
+            <a href="{% url 'login' %}" class="btn-launch">Je me lance !</a>
+            </div>
+        {% else %}
+            <div class="btn">
+            <a href="{% url 'calendrier' %}" class="btn-launch">Je me lance ! </a>
+            </div>
+        {% endif %}
+
+
+    </div>
+
+
+    <div class="footer">
+        <a href="{% url 'confidentialite' %}" >Confidentialité</a>
+        <p>© 2024 Tutorat Fermat</p>
+        <a href="mailto:tutorat.lycee.fermat@gmail.com">tutorat.lycee.fermat@gmail.com</a>
+    </div>
+
+</body>
+</html>

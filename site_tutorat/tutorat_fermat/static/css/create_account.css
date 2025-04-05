@@ -1,0 +1,241 @@
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'sans-serif';
+    src: url('DMSans-VariableFont_opsz,wght.ttf') format('opentype');
+}
+
+body {
+    font-family: 'sans-serif';
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(240, 245, 249);
+    align-items: center;
+    padding-top: 70px;
+}
+
+.top-bar {
+    height: 70px;
+    z-index: 10;
+    padding: 10px 5%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(245, 245, 247, 0.8);
+}
+
+.nav-button {
+    color: rgb(82, 97, 107);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    text-align: center;
+}
+
+.nav-button:hover {
+    color: black;
+}
+
+/* Contenu principal */
+body {
+    font-family: 'sans-serif';
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(240, 245, 249);
+    align-items: center;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: #00000060;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    width: 60%;
+    max-width: 100%;
+    position: relative;
+    overflow-y: auto;
+}
+
+.main-box h2 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Formulaire */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-item {
+    flex: 1 1 45%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: #00000020;
+    color: black;
+    font-size: 17px;
+    border-radius: 2px;
+    outline: none;
+}
+
+.button {
+    background-color: #81818100;
+    color: #e27575;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+
+    font-size: 25px;
+
+    transition: color 0.2s ease;
+
+
+}
+
+
+.button:hover {
+        color: #b63535;
+}
+
+/* Pied de page */
+.footer {
+    width: 100%;
+    background-color: #ffffff25;
+    color: black;
+    text-align: center;
+    padding: 15px 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: fixed;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 17px;
+    color: black;
+    margin: 5px 15px;
+}
+
+.footer a {
+    color: rgb(82, 97, 107);
+    text-decoration: none;
+    margin: 5px 15px;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: #000000;
+}
+
+/* ----------------------RESPONSIVE DESIGN---------------- */
+
+/* Tablettes en paysage */
+@media (max-width: 1024px) {
+    .main-box {
+        width: 80%;
+    }
+
+    .form-item {
+        flex: 1 1 100%;
+    }
+
+    .button {
+        font-size: 22px;
+    }
+
+    .footer p, .footer a {
+        font-size: 16px;
+    }
+}
+
+/* Tablettes en portrait et petits écrans */
+@media (max-width: 768px) {
+    .main-box {
+        width: 90%;
+    }
+
+    .button {
+        font-size: 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer p, .footer a {
+        font-size: 15px;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .main-box {
+        width: 95%;
+    }
+
+    .button {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
+    .footer p, .footer a {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,39 @@
+Indexation des matieres:
+1. Maths
+2. Physique
+3. Chimie
+4. Maths expertes
+5. Maths complémentaires
+6. Anglais
+7. Français
+8. NSI
+9. Philosophie
+10. SVT
+11. Histoire
+12. Géographie
+13. SES
+14. SI
+15. Espagnol
+16. Allemand
+17. Géopolitique (Geopo)
+18. HLP
+19. EMC
+20. Latin
+21. Grec
+22. ES Maths
+23. ES PC
+24. ES SVT
+25. Arabe
+26. Italien
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+Reservation form data :
+
+role: 0 eleve ; 1 tuteur
+classe: 0 seconde ; 1 premiere ; 2 terminale
+matiere: 1-26
+horaires: ["hh-mm-jj-mm-aaaa"]
+

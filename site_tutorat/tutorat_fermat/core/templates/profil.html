@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <title>Tutorat Fermat</title>
+    
+    <link rel="stylesheet" href="{% static 'css/profil.css' %}">
+
+
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Tutorat Fermat</h1>
+        <div class="top-bar-right">
+            <a href="{% url 'logout' %}" class="nav-button">Se déconnecter</a>
+            <a href="{% url 'seances' %}" class="nav-button">Réserver une séance</a>
+            <a href="{% url 'home' %}" class="nav-button">Accueil</a>
+        </div>
+
+
+     </div>
+
+    <div class="main-box">
+
+
+        {% if user.is_authenticated %}
+
+
+            <div class="infos">
+
+                <h1>Votre profil </h1>
+
+                <div class="info">
+                    <p class="t_s1">Nom d'utilisateur: </p>
+                    <p class="get_info">{{ user.username }}</p>
+                </div>
+
+                <div class="info">
+                    <p class="t_s1">Email: </p>
+                    <p class="get_info">{{ user.email }}</p>
+                </div>
+
+                <div class="info">
+                    <p class="t_s1">Nom: </p>
+                    <p class="get_info">{{ user.last_name }}</p>
+                </div>
+
+                <div class="info">
+                    <p class="t_s1">Prénom: </p>
+                    <p class="get_info">{{ user.first_name }}</p>
+                </div>
+            </div>
+
+            <div class="attente">
+                <div class="attente_sub" id="box_tuteur">
+                    <h1>En attente (tuteur)</h1>
+                    {% for tuteur in tuteurs %}
+                    <div class="attente_line"> 
+
+                        <p class="t_s1">Séance de tutorat de {{tuteur.nom_matiere}}: </p>
+                        <p class="get_info"> 
+                            {{ tuteur.date1 }} à {{ tuteur.heure1 }} <br>
+                            {{ tuteur.date2 }} à {{ tuteur.heure2 }} <br> 
+                            {{ tuteur.date3 }} à {{ tuteur.heure3 }} <br>
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="attente_sub">
+                    <h1>En attente (élève)</h1>
+                    {% for eleve in eleves %}
+                    <div class="attente_line"> 
+
+                        <p class="t_s1">Séance de tutorat de {{eleve.nom_matiere}}: </p>
+                        <p class="get_info"> 
+                            {{ eleve.date1 }} à {{ eleve.heure1 }} <br>
+                            {{ eleve.date2 }} à {{ eleve.heure2 }} <br> 
+                            {{ eleve.date3 }} à {{ eleve.heure3 }} <br>
+                        </p>
+                    </div>   
+                    {% endfor %} 
+                </div>
+            </div>
+
+
+            
+            <div class="sessions">
+
+                <h1>Vos séances (futures et passées)</h1>
+                {% for session in history %}
+                    <div class="session">
+                        <p class="t_s1">Date: </p>
+                        <p class="get_info">{{ session.5 }}</p>
+                        <p class="t_s1">Heure: </p>
+                        <p class="get_info">{{ session.6 }}</p>
+                        <p class="t_s1">Matiere: </p>
+                        <p class="get_info">{{ session.4 }}</p>
+                        <p class="t_s1">Tuteur: </p>
+                        <p class="get_info">{{ session.1 }}</p>
+                        <p class="t_s1">Eleve: </p>
+                        <p class="get_info">{{ session.3 }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="t_s1">Vous n'êtes pas connecté. <a href="{% url 'login' %}">Se connecter</a></p>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Tutorat Fermat</p>
+        <a href="mailto:tutorat.lycee.fermat@gmail.com">tutorat.lycee.fermat@gmail.com</a>
+    </div>
+
+</body>
+</html>
+

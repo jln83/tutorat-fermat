@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <title>Tutorat Fermat</title>
+    
+    <link rel="stylesheet" href="{% static 'css/confidentialite.css' %}">
+
+    <link rel="icon" href="{% static 'icons/icone-fermat.ico' %}">
+
+</head>
+<body>
+
+    <div class="top-bar">
+        <h1>Tutorat Fermat</h1>
+        <div class="top-bar-right">
+            {% if not user.is_authenticated %}
+                <a href="{% url 'login' %}" class="nav-button">Connexion</a>
+            {% else %}
+                <a href="{% url 'seances' %}" class="nav-button">Réserver une séance</a>
+                <a href="{% url 'profil' %}" class="nav-button">Profil</a> 
+            {% endif %}
+            <a href="{% url 'home' %}" class="nav-button">Accueil</a>
+        </div>
+
+     </div>
+
+    <div class="main-box">
+        <h1>Confidentialité</h1>
+        <section>
+            <h1>Introduction</h1>
+            <p class="t_s1">
+                Ce site est exclusivement destiné à une utilisation interne au sein du lycée. Toutes les données collectées sont strictement contrôlées et ne quittent jamais l’environnement sécurisé de l’établissement. Notre objectif est de garantir la confidentialité et la sécurité des informations des élèves, enseignants et autres utilisateurs de la plateforme.
+            </p>
+        </section>
+        <section>
+            <h1>Collecte et utilisation des données</h1>
+            <p class="t_s1">
+                Nous collectons les informations suivantes pour assurer le bon fonctionnement de notre service :
+            </p>
+            <ul>
+                <li><strong>Informations personnelles : </strong>Votre nom, prénom, adresse e-mail, et autres données que vous fournissez lors de l'inscription.</li>
+                <li><strong>Historique des sessions : </strong>Les détails des cours réservés ou suivis.</li>
+                <li><strong>Données techniques : </strong>L'adresse IP, le type de navigateur, et autres informations nécessaires pour des raisons de sécurité et d'amélioration de nos services.</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Sécurité des données</h1>
+            <p class="t_s1">
+                La sécurité de vos données est notre priorité :
+            </p>
+            <ul>
+                <li>Vos mots de passe sont chiffrés à l'aide d'algorithmes sécurisés et ne sont jamais visibles, même pour les administrateurs.</li>
+                <li>Nous utilisons le protocole HTTPS pour protéger vos communications avec notre serveur.</li>
+                <li>Notre plateforme est hébergée sur des serveurs sécurisés conformes aux normes de sécurité actuelles.</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Partage des données</h1>
+            <p class="t_s1">
+                Nous ne partageons pas vos données personnelles avec des tiers sans votre consentement, sauf si requis par la loi ou pour assurer la sécurité de nos services.
+            </p>
+        </section>
+        <section>
+            <h1>Cookies</h1>
+            <p class="t_s1">
+                Notre site utilise des cookies pour améliorer votre expérience utilisateur. Vous pouvez configurer votre navigateur pour refuser les cookies, mais certaines fonctionnalités pourraient ne pas être disponibles.
+            </p>
+        </section>
+        <section>
+            <h1>Vos droits</h1>
+            <p class="t_s1">
+                Vous avez le droit de :
+            </p>
+            <ul>
+                <li >Accéder à vos données personnelles.</li>
+                <li >Demander leur rectification ou suppression.</li>
+                <li >Limiter ou vous opposer à leur traitement.</li>
+                <li >Porter plainte auprès d'une autorité de protection des données.</li>
+            </ul>
+            <p class="t_s1">
+                Pour exercer ces droits, contactez-nous à : <a href="mailto:tutorat.lycee.fermat@gmail.com">tutorat.lycee.fermat@gmail.com</a>.
+            </p>
+        </section>
+        <section>
+            <h1>Modifications de cette politique</h1>
+            <p class="t_s1">
+                Nous nous réservons le droit de modifier cette politique de confidentialité. Toute mise à jour sera publiée sur cette page avec une date de révision.
+            </p>
+            <p class="t_s1">Date de dernière mise à jour : 19 janvier 2025</p>
+        </section>
+
+
+    </div>
+
+    <div class="footer">
+        <a href="{% url 'confidentialite' %}" >Confidentialité</a>
+        <p>© 2024 Tutorat Fermat</p>
+        <a href="mailto:tutorat.lycee.fermat@gmail.com">tutorat.lycee.fermat@gmail.com</a>
+    </div>
+
+</body>
+</html>

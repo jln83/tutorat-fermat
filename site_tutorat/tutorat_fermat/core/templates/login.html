@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tutorat Fermat</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+    <link rel="icon" href="{% static 'icons/icone-fermat.ico' %}">
+
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Tutorat Fermat</h1>
+        <div class="top-bar-right">
+            <a href="{% url 'home' %}" class="nav-button">Accueil</a>
+        </div>
+
+    </div>
+
+    <div class="main-box">
+
+        <div class="login-box">
+        <p>Connexion</p>
+        <form action="{% url 'login' %}" method="post">
+
+            {% csrf_token %}
+
+            <input type="text" id="username" name="username" class="input_text" required placeholder="Nom d'utilisateur">
+
+            <br>
+
+            <input type="password" id="password" name="password" class="input_text" required placeholder="Mot de passe">
+
+            <br>
+
+            <button type="submit" class="button" id="register"> Se connecter </button>
+
+        </form>
+        </div>
+
+        <div class="error-message" id="error-message1">
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+
+        <div class="options">
+        <p>Vous n'avez pas de compte ?</p>
+        <a href="{% url 'creationdecompte' %}" class="btn-creationcompte">Créer un compte</a>
+        </div>
+            
+
+    </div>
+
+    <div class="footer">
+        <a href="{% url 'confidentialite' %}" >Confidentialité</a>
+        <p>© 2024 Tutorat Fermat</p>
+        <a href="mailto:tutorat.lycee.fermat@gmail.com">tutorat.lycee.fermat@gmail.com</a>
+    </div>
+
+</body>
+</html>
