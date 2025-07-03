@@ -2,19 +2,6 @@
 
 ---
 
-##  Table des matières
-
-- [Fonctionnalités](#-fonctionnalités)
-- [Architecture du projet](#-architecture-du-projet)
-- [Installation & démarrage rapide](#-installation--démarrage-rapide)
-- [Tests](#-tests)
-- [Configuration & déploiement](#-configuration--déploiement)
-- [Contribuer](#-contribuer)
-- [Licence](#-licence)
-
----
-
-
 ## Fonctionnalités
 
 - Authentification élèves/tuteurs (Django Auth)
