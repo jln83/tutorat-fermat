@@ -30,7 +30,7 @@ Enfin, le fichier `requirements.txt` liste les dépendances Python nécessaires 
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### 1. Cloner le dépôt
 
